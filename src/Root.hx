@@ -23,13 +23,8 @@ class Root extends Sprite {
 
         assets = new AssetManager();
 		
-		assets.enqueue("assets/spritesheet0.png");
-		assets.enqueue("assets/spritesheet0.xml");
-        assets.enqueue("assets/spritesheet1.png");
-        assets.enqueue("assets/spritesheet1.xml");
-        assets.enqueue("assets/club2.png");
-		assets.enqueue("assets/music/disco_3.mp3");
-		assets.enqueue("assets/win.png");
+		assets.enqueue("assets/chalkboard.png");
+		assets.enqueue("assets/chalkboard2.png");
 		
         assets.loadQueue(function onProgress(ratio:Float) {
             haxe.Log.clear();
@@ -38,10 +33,11 @@ class Root extends Sprite {
                 haxe.Log.clear();
 				startup.removeChild(startup.loadingBitmap);
  
-
-                var menu = new Menu(rootSprite);
-                menu.mainMenu();                }
-
+				var game = new Game(rootSprite);
+				game.start();
+                //var menu = new Menu(rootSprite);
+                //menu.mainMenu();                }
+			}
         });
 		
     }
