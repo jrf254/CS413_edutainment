@@ -15,17 +15,8 @@ import starling.textures.Texture;
 
 class Game extends Sprite {
 	public var rootSprite:Sprite;
-	public var boardsArray:Array<Image>;
-	public static var myFont:BitmapFont;
-	
-	public static function getFont():BitmapFont{
-		var fontTexture:Texture = Root.assets.getTexture("chalkFont");
-		var fontXML = Root.assets.getXml("chalkFont");
-		
-		var font:BitmapFont = new BitmapFont(fontTexture, fontXML);
-		TextField.registerBitmapFont(font);
-		return font;
-	}
+	public var boardsArray:Array<Image>;	
+
 	public function new(rootSprite:Sprite) {
 		this.rootSprite = rootSprite;
 		super();
@@ -34,9 +25,11 @@ class Game extends Sprite {
 	public function start(){
 		rootSprite.addEventListener(EnterFrameEvent.ENTER_FRAME, enterFrame);
 		boardsArray = populate();
-		myFont = getFont();
-		trace(myFont.name);
-		var text = new TextField(100,100,"Why Was 6 Afraid of 7?", "font", 12);
+		var text = new TextField(200,200,"Why Was 6 Afraid of 7?", "Eraser", 12);
+		text.fontSize = 32;
+		text.x = 450;
+		text.y = 100;
+		text.color = 0xFFFFFF;
 		rootSprite.addChild(text);
 	}
 	
@@ -100,3 +93,4 @@ class Game extends Sprite {
 		}
 	}
 }
+

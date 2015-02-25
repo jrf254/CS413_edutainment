@@ -25,8 +25,8 @@ class Root extends Sprite {
 		
 		assets.enqueue("assets/chalkboard.png");
 		assets.enqueue("assets/chalkboard2.png");
-		assets.enqueue("assets/chalkFont.png");
-		assets.enqueue("assets/chalkFont.xml");
+		assets.enqueue("assets/chalk.png");
+		assets.enqueue("assets/chalk.fnt");
 		
         assets.loadQueue(function onProgress(ratio:Float) {
             haxe.Log.clear();
