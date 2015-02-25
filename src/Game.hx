@@ -25,11 +25,7 @@ class Game extends Sprite {
 	public function start(){
 		rootSprite.addEventListener(EnterFrameEvent.ENTER_FRAME, enterFrame);
 		boardsArray = populate();
-		var text = new TextField(200,200,"Why Was 6 Afraid of 7?", "Eraser", 12);
-		text.fontSize = 32;
-		text.x = 450;
-		text.y = 100;
-		text.color = 0xFFFFFF;
+		var text = new Prompt(450, 100);
 		rootSprite.addChild(text);
 	}
 	
