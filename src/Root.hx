@@ -16,8 +16,6 @@ class Root extends Sprite {
         rootSprite = this;
         super();
     }
-	
-
 
     public function start(startup:Startup) {
 
@@ -27,6 +25,7 @@ class Root extends Sprite {
 		assets.enqueue("assets/chalkboard2.png");
 		assets.enqueue("assets/chalk.png");
 		assets.enqueue("assets/chalk.fnt");
+        assets.enqueue("assets/menu.png");
 		
         assets.loadQueue(function onProgress(ratio:Float) {
             haxe.Log.clear();
@@ -35,10 +34,10 @@ class Root extends Sprite {
                 haxe.Log.clear();
 				startup.removeChild(startup.loadingBitmap);
  
-				var game = new Game(rootSprite);
-				game.start();
-                //var menu = new Menu(rootSprite);
-                //menu.mainMenu();                }
+				//var game = new Game(rootSprite);
+				//game.start();
+                var menu = new Menu(rootSprite);
+                menu.mainMenu();                
 			}
         });
 		
