@@ -20,6 +20,7 @@ class Menu extends Sprite{
 	public var menu:Image;
 	public var play:TextField;
 	public var instructions:TextField;
+	public var credits:TextField;
 
 	public function new(rootSprite:Sprite) {
 		this.rootSprite = rootSprite;
@@ -53,6 +54,18 @@ class Menu extends Sprite{
 
 		instructions.addEventListener(TouchEvent.TOUCH, function(e:TouchEvent){
             var touch = e.getTouch(instructions, TouchPhase.BEGAN);
+                if (touch != null){
+                  
+   		}}); 
+
+   		credits = new TextField(200, 100, "Credits", "font", 50);
+		credits.color = 0xFFFFFF;
+		credits.x = 350;
+		credits.y = 330;
+		rootSprite.addChild(credits);
+
+		credits.addEventListener(TouchEvent.TOUCH, function(e:TouchEvent){
+            var touch = e.getTouch(credits, TouchPhase.BEGAN);
                 if (touch != null){
                   
    		}}); 
