@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalong="no"?>
 <application xmlns="http://ns.adobe.com/air/application/3.8">
-  <id>com.cs413.puzzles</id>
-  <name>Disco</name>
+  <id>com.cs413.edutainment</id>
+  <name>Why Was 6 Afraid of 7?</name>
   <filename>disco</filename>
-  <versionNumber>2.10.15</versionNumber>
+  <versionNumber>2.27.15</versionNumber>
   <initialWindow>
     <content>game.swf</content>
     <renderMode>direct</renderMode>
