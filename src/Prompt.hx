@@ -1,6 +1,7 @@
 import starling.text.TextField;
 import starling.text.BitmapFont;
 import starling.events.EnterFrameEvent;
+import starling.text.TextField;
 
 class Prompt extends TextField{
 	private var correct:Bool = true;
@@ -9,7 +10,9 @@ class Prompt extends TextField{
 	private var type:Int;
 	private var answer:Float;
 	private var diff:Int;
-	private var correctCount:Int;
+	private var correctCount:Int = 0;
+	private var correctCountHelper:Int = 0;
+	private var scoreCounter:TextField;
 
 	public function new(xCoord:Float, yCoord:Float, type:Int = 1){
 		super(500, 200, "","",48);
@@ -82,8 +85,8 @@ class Prompt extends TextField{
 			this.x = xCoord;
 			this.text = generateQuestion(type,diff);
 		}
-		if (correctCount >= 10){
-			correctCount = 0;
+		if (correctCountHelper >= 10){
+			correctCountHelper = 0;
 			diff = diff + 1;
 		}
 	}
@@ -101,5 +104,9 @@ class Prompt extends TextField{
 			return true;
 		}
 		return false;
+	}
+	
+	public function getScore():Int{
+		return correctCount;
 	}
 }

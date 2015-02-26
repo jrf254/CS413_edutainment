@@ -17,6 +17,8 @@ class Game extends Sprite {
 	public var rootSprite:Sprite;
 	public var boardsArray:Array<Image>;	
 	public var type:Int;
+	private var scoreCounter:TextField;
+	private var correctCount:Int = 10;
 
 	public function new(rootSprite:Sprite) {
 		this.rootSprite = rootSprite;
@@ -28,6 +30,11 @@ class Game extends Sprite {
 		boardsArray = populate();
 		var text = new Prompt(900, 50, type);
 		rootSprite.addChild(text);
+		
+		scoreCounter = new TextField(500,60, "Score: " + text.getScore(), "font", 50, 0xFFFFFF);
+		scoreCounter.x = 550;
+		scoreCounter.y = 0;
+		rootSprite.addChild(scoreCounter);
 	}
 	
 	public function enterFrame(event:EnterFrameEvent) {
