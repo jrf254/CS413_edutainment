@@ -19,6 +19,7 @@ class Game extends Sprite {
 	public var type:Int;
 	private var scoreCounter:TextField;
 	private var correctCount:Int = 10;
+	private var text:Prompt;
 
 	public function new(rootSprite:Sprite) {
 		this.rootSprite = rootSprite;
@@ -28,7 +29,7 @@ class Game extends Sprite {
 	public function start(){
 		rootSprite.addEventListener(EnterFrameEvent.ENTER_FRAME, enterFrame);
 		boardsArray = populate();
-		var text = new Prompt(900, 50, type);
+		text = new Prompt(900, 50, type);
 		rootSprite.addChild(text);
 		
 		scoreCounter = new TextField(500,60, "Score: " + text.getScore(), "font", 50, 0xFFFFFF);
@@ -39,6 +40,7 @@ class Game extends Sprite {
 	
 	public function enterFrame(event:EnterFrameEvent) {
 		rotate(boardsArray);
+		updateScore();
 	}
 	
 	//populates the board with multiple tiles
@@ -98,6 +100,10 @@ class Game extends Sprite {
 	}
 	public function setType(type:Int){
 		this.type = type;
+	}
+	
+	public function updateScore(){
+		scoreCounter.text = "Score: " + text.getScore();
 	}
 }
 
