@@ -11,6 +11,7 @@ class Root extends Sprite {
 
     public static var assets:AssetManager;
     public var rootSprite:Sprite;
+	public var menu:Menu;
 	
     public function new() {
         rootSprite = this;
@@ -36,7 +37,7 @@ class Root extends Sprite {
  
 				//var game = new Game(rootSprite);
 				//game.start();
-                var menu = new Menu(rootSprite);
+                menu = new Menu(rootSprite);
                 menu.mainMenu();                
 			}
         });

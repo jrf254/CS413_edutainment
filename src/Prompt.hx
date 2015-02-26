@@ -11,7 +11,7 @@ class Prompt extends TextField{
 	private var diff:Int;
 	private var correctCount:Int;
 
-	public function new(xCoord:Float, yCoord:Float){
+	public function new(xCoord:Float, yCoord:Float, type:Int = 1){
 		super(500, 200, "","",48);
 		this.x = xCoord;
 		this.y = yCoord;
@@ -20,8 +20,9 @@ class Prompt extends TextField{
 		this.fontName = "font";
 		this.fontSize = 48;
 		this.color = 0xFFFFFF;
-		type = menu.getType();
-		diff = 2
+		trace(this.parent);
+		this.type = type;
+		diff = 2;
 		this.text = generateQuestion(type, diff);
 		this.addEventListener(EnterFrameEvent.ENTER_FRAME, enterFrame);
 	}

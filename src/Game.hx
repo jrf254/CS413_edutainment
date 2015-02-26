@@ -16,6 +16,7 @@ import starling.textures.Texture;
 class Game extends Sprite {
 	public var rootSprite:Sprite;
 	public var boardsArray:Array<Image>;	
+	public var type:Int;
 
 	public function new(rootSprite:Sprite) {
 		this.rootSprite = rootSprite;
@@ -25,7 +26,7 @@ class Game extends Sprite {
 	public function start(){
 		rootSprite.addEventListener(EnterFrameEvent.ENTER_FRAME, enterFrame);
 		boardsArray = populate();
-		var text = new Prompt(900, 100);
+		var text = new Prompt(900, 100, type);
 		rootSprite.addChild(text);
 	}
 	
@@ -87,6 +88,9 @@ class Game extends Sprite {
 				i.x = 1048;
 			}
 		}
+	}
+	public function setType(type:Int){
+		this.type = type;
 	}
 }
 

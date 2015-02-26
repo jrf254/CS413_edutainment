@@ -40,10 +40,6 @@ class Menu extends Sprite{
 		super();
 	}
 
-	public function getType():Int{
-		return type;
-	}
-
 	public function mainMenu(){
 		menu = new Image(Root.assets.getTexture("menu"));	
 		menu.width = flash.Lib.current.stage.stageWidth;
@@ -66,6 +62,7 @@ class Menu extends Sprite{
             var touch = e.getTouch(play, TouchPhase.BEGAN);
                 if (touch != null){
                    	var game = new Game(rootSprite);
+					game.setType(type);
                    	game.start();
    				}
    		}); 
