@@ -70,7 +70,7 @@ class Menu extends Sprite{
    		instructions = new TextField(300, 100, "Instructions", "font", 50);
 		instructions.color = 0xFFFFFF;
 		instructions.x = 300;
-		instructions.y = 265;
+		instructions.y = 300;
 		rootSprite.addChild(instructions);
 
 		instructions.addEventListener(TouchEvent.TOUCH, function(e:TouchEvent){
@@ -92,7 +92,7 @@ class Menu extends Sprite{
    		credits = new TextField(200, 100, "Credits", "font", 50);
 		credits.color = 0xFFFFFF;
 		credits.x = 350;
-		credits.y = 330;
+		credits.y = 400;
 		rootSprite.addChild(credits);
 
 		back = new TextField(300, 300, "Back to Menu", "font", 50);
@@ -139,19 +139,19 @@ class Menu extends Sprite{
    		mode = new TextField(300, 100, "Difficulty", "font", 50);
 		mode.color = 0xFFFFFF;
 		mode.x = 300;
-		mode.y = 395;
+		mode.y = 500;
 		add = new TextField(100, 100, "Add", "font", 40);
 		add.color = 0xFFFFFF;
 		add.x = 400;
-		add.y = 200;
+		add.y = 250;
 		sub = new TextField(200, 100, "Subtract", "font", 40);
 		sub.color = 0xFFFFFF;
 		sub.x = 350;
-		sub.y = 250;
+		sub.y = 350;
 		mul = new TextField(200, 100, "Multiply", "font", 40);
 		mul.color = 0xFFFFFF;
 		mul.x = 350;
-		mul.y = 300;
+		mul.y = 450;
 
 		rootSprite.addChild(mode);
 
@@ -180,11 +180,11 @@ class Menu extends Sprite{
                 	play.x = 350;
 					play.y = 200;
 					instructions.x = 300;
-					instructions.y = 265;
+					instructions.y = 300;
 					credits.x = 350;
-					credits.y = 330;
+					credits.y = 400;
 					mode.x = 300;
-					mode.y = 395;
+					mode.y = 500;
                 	rootSprite.addChild(play);
                 	rootSprite.addChild(instructions);
                 	rootSprite.addChild(credits);
@@ -202,11 +202,11 @@ class Menu extends Sprite{
                 	play.x = 350;
 					play.y = 200;
 					instructions.x = 300;
-					instructions.y = 265;
+					instructions.y = 300;
 					credits.x = 350;
-					credits.y = 330;
+					credits.y = 400;
 					mode.x = 300;
-					mode.y = 395;
+					mode.y = 500;
                 	rootSprite.addChild(play);
                 	rootSprite.addChild(instructions);
                 	rootSprite.addChild(credits);
@@ -224,11 +224,11 @@ class Menu extends Sprite{
                 	play.x = 350;
 					play.y = 200;
 					instructions.x = 300;
-					instructions.y = 265;
+					instructions.y = 300;
 					credits.x = 350;
-					credits.y = 330;
+					credits.y = 400;
 					mode.x = 300;
-					mode.y = 395;
+					mode.y = 500;
                 	rootSprite.addChild(play);
                 	rootSprite.addChild(instructions);
                 	rootSprite.addChild(credits);
@@ -251,11 +251,11 @@ class Menu extends Sprite{
                 	play.x = 350;
 					play.y = 200;
 					instructions.x = 300;
-					instructions.y = 265;
+					instructions.y = 300;
 					credits.x = 350;
-					credits.y = 330;
+					credits.y = 400;
 					mode.x = 300;
-					mode.y = 395;
+					mode.y = 500;
                 	rootSprite.addChild(play);
                 	rootSprite.addChild(instructions);
                 	rootSprite.addChild(credits);
