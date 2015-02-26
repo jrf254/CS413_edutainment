@@ -28,6 +28,7 @@ class Menu extends Sprite{
 	public var jonathon:TextField;
 	public var salvatore:TextField;
 	public var thomas:TextField;
+	public var how:TextField;
 
 	public function new(rootSprite:Sprite) {
 		this.rootSprite = rootSprite;
@@ -73,8 +74,12 @@ class Menu extends Sprite{
                 	rootSprite.removeChild(play);
                 	rootSprite.addChild(back);
                 	instructions.y = 150;
-                  
-   			}
+                	how = new TextField(800, 200, "Help 9 escape from 7 by correctly answering the questions.", "font", 40);
+					how.color = 0xFFFFFF;
+					how.x = 50;
+					how.y = 200;
+					rootSprite.addChild(how);  
+   				}
    		}); 
 
    		credits = new TextField(200, 100, "Credits", "font", 50);
@@ -131,6 +136,7 @@ class Menu extends Sprite{
                 	rootSprite.removeChild(joshua);
                 	rootSprite.removeChild(thomas);
                 	rootSprite.removeChild(jonathon);
+                	rootSprite.removeChild(how);
                 	rootSprite.removeChild(back);
                 	play.x = 350;
 					play.y = 200;
