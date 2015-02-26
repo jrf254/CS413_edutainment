@@ -23,8 +23,8 @@ class Root extends Sprite {
 		
 		assets.enqueue("assets/chalkboard.png");
 		assets.enqueue("assets/chalkboard2.png");
-		assets.enqueue("assets/chalk.png");
-		assets.enqueue("assets/chalk.fnt");
+		assets.enqueue("assets/Eraser.png");
+		assets.enqueue("assets/Eraser.fnt");
         assets.enqueue("assets/menu.png");
 		
         assets.loadQueue(function onProgress(ratio:Float) {

@@ -31,7 +31,8 @@ class Menu extends Sprite{
         menu.height = flash.Lib.current.stage.stageHeight;
 		rootSprite.addChild(menu);
 
-		play = new TextField(200, 200, "Play", "chalk", 50);
+		play = new TextField(200, 200, "Play", "Eraser", 50);
+		play.color = 0xFFFFFF;
 		play.x = 350;
 		play.y = 200;
 		rootSprite.addChild(play);

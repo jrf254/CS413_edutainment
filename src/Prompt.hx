@@ -16,4 +16,8 @@ class Prompt extends TextField{
 	public function generateQuestion():String{
 		return "Hello";
 	}
+	
+	public function update(){
+		this.x = this.x - 2;
+	}
 }
