@@ -25,7 +25,7 @@ class Game extends Sprite {
 	public function start(){
 		rootSprite.addEventListener(EnterFrameEvent.ENTER_FRAME, enterFrame);
 		boardsArray = populate();
-		var text = new Prompt(700, 100);
+		var text = new Prompt(900, 100);
 		rootSprite.addChild(text);
 	}
 	
