@@ -21,7 +21,7 @@ class Prompt extends TextField{
 		this.fontSize = 48;
 		this.color = 0xFFFFFF;
 		type = menu.getType();
-		diff = 2
+		diff = 2;
 		this.text = generateQuestion(type, diff);
 		this.addEventListener(EnterFrameEvent.ENTER_FRAME, enterFrame);
 	}
