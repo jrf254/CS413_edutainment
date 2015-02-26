@@ -20,7 +20,6 @@ class Prompt extends TextField{
 		this.fontName = "font";
 		this.fontSize = 48;
 		this.color = 0xFFFFFF;
-		trace(this.parent);
 		this.type = type;
 		diff = 2;
 		this.text = generateQuestion(type, diff);
