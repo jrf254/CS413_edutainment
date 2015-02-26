@@ -23,6 +23,11 @@ class Menu extends Sprite{
 	public var credits:TextField;
 	public var back:TextField;
 	public var title:TextField;
+	public var veronika:TextField;
+	public var joshua:TextField;
+	public var jonathon:TextField;
+	public var salvatore:TextField;
+	public var thomas:TextField;
 
 	public function new(rootSprite:Sprite) {
 		this.rootSprite = rootSprite;
@@ -35,7 +40,7 @@ class Menu extends Sprite{
         menu.height = flash.Lib.current.stage.stageHeight;
 		rootSprite.addChild(menu);
 
-		title = new TextField(900, 100, "Why Was 6 Afraid Of 7?", "font", 75);
+		title = new TextField(900, 100, "Why Was 6 Afraid Of 7", "font", 75);
 		title.color = 0xFFFFFF;
 		title.x = 5;
 		title.y = 50;
@@ -67,7 +72,7 @@ class Menu extends Sprite{
                 	rootSprite.removeChild(credits);
                 	rootSprite.removeChild(play);
                 	rootSprite.addChild(back);
-                	instructions.y = 100;
+                	instructions.y = 150;
                   
    			}
    		}); 
@@ -89,14 +94,43 @@ class Menu extends Sprite{
                 	rootSprite.removeChild(instructions);
                 	rootSprite.removeChild(play);
                 	rootSprite.addChild(back);
-                	credits.y = 100;
-                  
+                	credits.y = 150;
+                	veronika = new TextField(300, 100, "Veronika Alves", "font", 40);
+					veronika.color = 0xFFFFFF;
+					veronika.x = 300;
+					veronika.y = 200;
+					rootSprite.addChild(veronika);
+					salvatore = new TextField(400, 100, "Salvatore Bottiglieri", "font", 40);
+					salvatore.color = 0xFFFFFF;
+					salvatore.x = 250;
+					salvatore.y = 250;
+					rootSprite.addChild(salvatore);
+                  	joshua = new TextField(400, 100, "Joshua Frampton", "font", 40);
+					joshua.color = 0xFFFFFF;
+					joshua.x = 250;
+					joshua.y = 300;
+					rootSprite.addChild(joshua);
+					thomas = new TextField(400, 100, "Thomas 0Brien", "font", 40);
+					thomas.color = 0xFFFFFF;
+					thomas.x = 250;
+					thomas.y = 350;
+					rootSprite.addChild(thomas);
+					jonathon = new TextField(400, 100, "Jonathon Todd", "font", 40);
+					jonathon.color = 0xFFFFFF;
+					jonathon.x = 250;
+					jonathon.y = 400;
+					rootSprite.addChild(jonathon);
    				}
    		}); 
 
    		back.addEventListener(TouchEvent.TOUCH, function(e:TouchEvent){
             var touch = e.getTouch(back, TouchPhase.BEGAN);
                 if (touch != null){
+                	rootSprite.removeChild(veronika);
+                	rootSprite.removeChild(salvatore);
+                	rootSprite.removeChild(joshua);
+                	rootSprite.removeChild(thomas);
+                	rootSprite.removeChild(jonathon);
                 	rootSprite.removeChild(back);
                 	play.x = 350;
 					play.y = 200;
