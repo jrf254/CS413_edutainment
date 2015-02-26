@@ -19,6 +19,7 @@ class Menu extends Sprite{
 	public var rootSprite:Sprite;
 	public var menu:Image;
 	public var play:TextField;
+	public var instructions:TextField;
 
 	public function new(rootSprite:Sprite) {
 		this.rootSprite = rootSprite;
@@ -31,7 +32,7 @@ class Menu extends Sprite{
         menu.height = flash.Lib.current.stage.stageHeight;
 		rootSprite.addChild(menu);
 
-		play = new TextField(200, 200, "Play", "font", 50);
+		play = new TextField(200, 100, "Play", "font", 50);
 		play.color = 0xFFFFFF;
 		play.x = 350;
 		play.y = 200;
@@ -42,6 +43,18 @@ class Menu extends Sprite{
                 if (touch != null){
                    	var game = new Game(rootSprite);
                    	game.start();
+   		}}); 
+
+   		instructions = new TextField(300, 100, "Instructions", "font", 50);
+		instructions.color = 0xFFFFFF;
+		instructions.x = 300;
+		instructions.y = 265;
+		rootSprite.addChild(instructions);
+
+		instructions.addEventListener(TouchEvent.TOUCH, function(e:TouchEvent){
+            var touch = e.getTouch(instructions, TouchPhase.BEGAN);
+                if (touch != null){
+                  
    		}}); 
 	}
 
