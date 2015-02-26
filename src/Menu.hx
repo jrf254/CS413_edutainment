@@ -45,7 +45,8 @@ class Menu extends Sprite{
                 if (touch != null){
                    	var game = new Game(rootSprite);
                    	game.start();
-   		}}); 
+   				}
+   		}); 
 
    		instructions = new TextField(300, 100, "Instructions", "font", 50);
 		instructions.color = 0xFFFFFF;
@@ -56,8 +57,13 @@ class Menu extends Sprite{
 		instructions.addEventListener(TouchEvent.TOUCH, function(e:TouchEvent){
             var touch = e.getTouch(instructions, TouchPhase.BEGAN);
                 if (touch != null){
+                	rootSprite.removeChild(credits);
+                	rootSprite.removeChild(play);
+                	rootSprite.addChild(back);
+                	instructions.y = 100;
                   
-   		}}); 
+   			}
+   		}); 
 
    		credits = new TextField(200, 100, "Credits", "font", 50);
 		credits.color = 0xFFFFFF;
@@ -73,25 +79,29 @@ class Menu extends Sprite{
 		credits.addEventListener(TouchEvent.TOUCH, function(e:TouchEvent){
             var touch = e.getTouch(credits, TouchPhase.BEGAN);
                 if (touch != null){
-                rootSprite.removeChild(instructions);
-                rootSprite.removeChild(play);
-                rootSprite.addChild(back);
-                credits.y = 100;
+                	rootSprite.removeChild(instructions);
+                	rootSprite.removeChild(play);
+                	rootSprite.addChild(back);
+                	credits.y = 100;
                   
-   		}}); 
+   				}
+   		}); 
 
    		back.addEventListener(TouchEvent.TOUCH, function(e:TouchEvent){
             var touch = e.getTouch(back, TouchPhase.BEGAN);
                 if (touch != null){
-                rootSprite.removeChild(back);
-                play.x = 350;
-				play.y = 200;
-				instructions.x = 300;
-				instructions.y = 265;
-				credits.y = 330;
-                rootSprite.addChild(play);
-                rootSprite.addChild(instructions);
-   		}}); 
+                	rootSprite.removeChild(back);
+                	play.x = 350;
+					play.y = 200;
+					instructions.x = 300;
+					instructions.y = 265;
+					credits.x = 350;
+					credits.y = 330;
+                	rootSprite.addChild(play);
+                	rootSprite.addChild(instructions);
+                	rootSprite.addChild(credits);
+   				}
+   		}); 
 	}
 
 
