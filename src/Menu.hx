@@ -21,6 +21,7 @@ class Menu extends Sprite{
 	public var play:TextField;
 	public var instructions:TextField;
 	public var credits:TextField;
+	public var back:TextField;
 
 	public function new(rootSprite:Sprite) {
 		this.rootSprite = rootSprite;
@@ -64,10 +65,32 @@ class Menu extends Sprite{
 		credits.y = 330;
 		rootSprite.addChild(credits);
 
+		back = new TextField(300, 300, "Back to Menu", "font", 50);
+		back.color = 0xFFFFFF;
+		back.x = 650;
+		back.y = 400;
+
 		credits.addEventListener(TouchEvent.TOUCH, function(e:TouchEvent){
             var touch = e.getTouch(credits, TouchPhase.BEGAN);
                 if (touch != null){
+                rootSprite.removeChild(instructions);
+                rootSprite.removeChild(play);
+                rootSprite.addChild(back);
+                credits.y = 100;
                   
+   		}}); 
+
+   		back.addEventListener(TouchEvent.TOUCH, function(e:TouchEvent){
+            var touch = e.getTouch(back, TouchPhase.BEGAN);
+                if (touch != null){
+                rootSprite.removeChild(back);
+                play.x = 350;
+				play.y = 200;
+				instructions.x = 300;
+				instructions.y = 265;
+				credits.y = 330;
+                rootSprite.addChild(play);
+                rootSprite.addChild(instructions);
    		}}); 
 	}
 
