@@ -23,7 +23,6 @@ class Prompt extends TextField{
 		type = menu.getType();
 		diff = 2
 		this.text = generateQuestion(type, diff);
-		
 		this.addEventListener(EnterFrameEvent.ENTER_FRAME, enterFrame);
 	}
 	

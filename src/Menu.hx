@@ -29,20 +29,19 @@ class Menu extends Sprite{
 	public var salvatore:TextField;
 	public var thomas:TextField;
 	public var how:TextField;
-	public var difficulty:Int;
+	public var type:Int;
 	public var mode:TextField;
+	public var add:TextField;
+	public var sub:TextField;
+	public var mul:TextField;
 
 	public function new(rootSprite:Sprite) {
 		this.rootSprite = rootSprite;
 		super();
 	}
 
-	public function getDiff(){
-
-	}
-
-	public function setDiff(){
-		difficulty = 0;
+	public function getType():Int{
+		return type;
 	}
 
 	public function mainMenu(){
@@ -144,6 +143,19 @@ class Menu extends Sprite{
 		mode.color = 0xFFFFFF;
 		mode.x = 300;
 		mode.y = 395;
+		add = new TextField(100, 100, "Add", "font", 40);
+		add.color = 0xFFFFFF;
+		add.x = 400;
+		add.y = 200;
+		sub = new TextField(200, 100, "Subtract", "font", 40);
+		sub.color = 0xFFFFFF;
+		sub.x = 350;
+		sub.y = 250;
+		mul = new TextField(200, 100, "Multiply", "font", 40);
+		mul.color = 0xFFFFFF;
+		mul.x = 350;
+		mul.y = 300;
+
 		rootSprite.addChild(mode);
 
    		mode.addEventListener(TouchEvent.TOUCH, function(e:TouchEvent){
@@ -154,12 +166,84 @@ class Menu extends Sprite{
                 	rootSprite.removeChild(play);
                 	rootSprite.addChild(back);
                 	mode.y = 150;
+					rootSprite.addChild(add);
+					rootSprite.addChild(sub);
+					rootSprite.addChild(mul);
    				}
    		}); 
+
+   		add.addEventListener(TouchEvent.TOUCH, function(e:TouchEvent){
+            var touch = e.getTouch(add, TouchPhase.BEGAN);
+                if (touch != null){
+                	type = 0;
+                	rootSprite.removeChild(add);
+                	rootSprite.removeChild(sub);
+                	rootSprite.removeChild(mul);
+                	rootSprite.removeChild(back);
+                	play.x = 350;
+					play.y = 200;
+					instructions.x = 300;
+					instructions.y = 265;
+					credits.x = 350;
+					credits.y = 330;
+					mode.x = 300;
+					mode.y = 395;
+                	rootSprite.addChild(play);
+                	rootSprite.addChild(instructions);
+                	rootSprite.addChild(credits);
+                }
+   		}); 
+
+   		sub.addEventListener(TouchEvent.TOUCH, function(e:TouchEvent){
+            var touch = e.getTouch(sub, TouchPhase.BEGAN);
+                if (touch != null){
+                	type = 1;
+                	rootSprite.removeChild(add);
+                	rootSprite.removeChild(sub);
+                	rootSprite.removeChild(mul);
+                	rootSprite.removeChild(back);
+                	play.x = 350;
+					play.y = 200;
+					instructions.x = 300;
+					instructions.y = 265;
+					credits.x = 350;
+					credits.y = 330;
+					mode.x = 300;
+					mode.y = 395;
+                	rootSprite.addChild(play);
+                	rootSprite.addChild(instructions);
+                	rootSprite.addChild(credits);
+                }
+   		});
+
+		mul.addEventListener(TouchEvent.TOUCH, function(e:TouchEvent){
+            var touch = e.getTouch(mul, TouchPhase.BEGAN);
+                if (touch != null){
+                	type = 2;
+                	rootSprite.removeChild(add);
+                	rootSprite.removeChild(sub);
+                	rootSprite.removeChild(mul);
+                	rootSprite.removeChild(back);
+                	play.x = 350;
+					play.y = 200;
+					instructions.x = 300;
+					instructions.y = 265;
+					credits.x = 350;
+					credits.y = 330;
+					mode.x = 300;
+					mode.y = 395;
+                	rootSprite.addChild(play);
+                	rootSprite.addChild(instructions);
+                	rootSprite.addChild(credits);
+                }
+   		});
 
    		back.addEventListener(TouchEvent.TOUCH, function(e:TouchEvent){
             var touch = e.getTouch(back, TouchPhase.BEGAN);
                 if (touch != null){
+                	rootSprite.removeChild(add);
+                	rootSprite.removeChild(sub);
+                	rootSprite.removeChild(mul);
                 	rootSprite.removeChild(veronika);
                 	rootSprite.removeChild(salvatore);
                 	rootSprite.removeChild(joshua);
