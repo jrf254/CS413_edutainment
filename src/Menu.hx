@@ -22,6 +22,7 @@ class Menu extends Sprite{
 	public var instructions:TextField;
 	public var credits:TextField;
 	public var back:TextField;
+	public var title:TextField;
 
 	public function new(rootSprite:Sprite) {
 		this.rootSprite = rootSprite;
@@ -33,6 +34,12 @@ class Menu extends Sprite{
 		menu.width = flash.Lib.current.stage.stageWidth;
         menu.height = flash.Lib.current.stage.stageHeight;
 		rootSprite.addChild(menu);
+
+		title = new TextField(900, 100, "Why Was 6 Afraid Of 7?", "font", 75);
+		title.color = 0xFFFFFF;
+		title.x = 5;
+		title.y = 50;
+		rootSprite.addChild(title);
 
 		play = new TextField(200, 100, "Play", "font", 50);
 		play.color = 0xFFFFFF;
