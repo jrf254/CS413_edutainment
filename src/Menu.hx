@@ -259,6 +259,7 @@ class Menu extends Sprite{
                 	rootSprite.addChild(play);
                 	rootSprite.addChild(instructions);
                 	rootSprite.addChild(credits);
+                	rootSprite.addChild(mode);
    				}
    		}); 
 	}
