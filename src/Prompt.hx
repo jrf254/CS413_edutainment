@@ -34,33 +34,42 @@ class Prompt extends TextField{
 		}
 		//addition branch
 		if (type == 0){
+			this.answer = 0;
 			for (i in 0...difficulty){
-				answer = answer + i;
-				returnString = returnString + numArray.pop();
+				var num = numArray.pop();
+				answer = answer + num;
+				returnString = returnString + num;
 				if (i < difficulty - 1){
 					returnString = returnString + " + ";
 				}
 			}
+			trace(answer);
 		}
 		//subtraction branch
 		else if(type == 1){
+			this.answer = 0;
 			for (i in 0...difficulty){
-				answer = answer - i;
-				returnString = returnString + numArray.pop();
+				var num = numArray.pop();
+				answer = answer - num;
+				returnString = returnString + num;
 				if (i < difficulty - 1){
 					returnString = returnString + " - ";
 				}
 			}
+			trace(answer);
 		}
 		//multiplication branch
 		else if(type == 2){
+			this.answer = 1;
 			for (i in 0...difficulty){
-				answer = answer * i;
-				returnString = returnString + numArray.pop();
+				var num = numArray.pop();
+				answer = answer * num;
+				returnString = returnString + num;
 				if (i < difficulty - 1){
 					returnString = returnString + " x ";
 				}
 			}
+			trace(answer);
 		}else{
 			return "ERROR";
 		}
