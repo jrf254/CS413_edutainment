@@ -7,6 +7,9 @@ class Prompt extends TextField{
 	private var xCoord:Float;
 	private var yCoord:Float;
 	private var type:Int;
+	private var answer:Float;
+	private var diff:Int;
+	private var correctCount:Int;
 
 	public function new(xCoord:Float, yCoord:Float){
 		super(500, 200, "","",48);
@@ -17,8 +20,10 @@ class Prompt extends TextField{
 		this.fontName = "font";
 		this.fontSize = 48;
 		this.color = 0xFFFFFF;
-		this.text = generateQuestion(3,3);
-		type = menu.getDiff();
+		type = menu.getType();
+		diff = 2
+		this.text = generateQuestion(type, diff);
+		
 		this.addEventListener(EnterFrameEvent.ENTER_FRAME, enterFrame);
 	}
 	
@@ -31,6 +36,7 @@ class Prompt extends TextField{
 		//addition branch
 		if (type == 0){
 			for (i in 0...difficulty){
+				answer = answer + i;
 				returnString = returnString + numArray.pop();
 				if (i < difficulty - 1){
 					returnString = returnString + " + ";
@@ -40,6 +46,7 @@ class Prompt extends TextField{
 		//subtraction branch
 		else if(type == 1){
 			for (i in 0...difficulty){
+				answer = answer - i;
 				returnString = returnString + numArray.pop();
 				if (i < difficulty - 1){
 					returnString = returnString + " - ";
@@ -49,18 +56,10 @@ class Prompt extends TextField{
 		//multiplication branch
 		else if(type == 2){
 			for (i in 0...difficulty){
+				answer = answer * i;
 				returnString = returnString + numArray.pop();
 				if (i < difficulty - 1){
 					returnString = returnString + " * ";
-				}
-			}
-		}
-		//division branch
-		else if(type == 3){
-			for (i in 0...difficulty){
-				returnString = returnString + numArray.pop();
-				if (i < difficulty - 1){
-					returnString = returnString + " / ";
 				}
 			}
 		}else{
@@ -73,7 +72,11 @@ class Prompt extends TextField{
 		this.x = this.x - 2;
 		if (isOffScreen()){
 			this.x = xCoord;
-			this.text = generateQuestion(type,2);
+			this.text = generateQuestion(type,diff);
+		}
+		if (correctCount >= 10){
+			correctCount = 0;
+			diff = diff + 1;
 		}
 	}
 		
