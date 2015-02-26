@@ -58,7 +58,7 @@ class Prompt extends TextField{
 				answer = answer * i;
 				returnString = returnString + numArray.pop();
 				if (i < difficulty - 1){
-					returnString = returnString + " * ";
+					returnString = returnString + " x ";
 				}
 			}
 		}else{
