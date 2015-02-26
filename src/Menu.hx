@@ -29,10 +29,20 @@ class Menu extends Sprite{
 	public var salvatore:TextField;
 	public var thomas:TextField;
 	public var how:TextField;
+	public var difficulty:Int;
+	public var mode:TextField;
 
 	public function new(rootSprite:Sprite) {
 		this.rootSprite = rootSprite;
 		super();
+	}
+
+	public function getDiff(){
+
+	}
+
+	public function setDiff(){
+		difficulty = 0;
 	}
 
 	public function mainMenu(){
@@ -70,6 +80,7 @@ class Menu extends Sprite{
 		instructions.addEventListener(TouchEvent.TOUCH, function(e:TouchEvent){
             var touch = e.getTouch(instructions, TouchPhase.BEGAN);
                 if (touch != null){
+                	rootSprite.removeChild(mode);
                 	rootSprite.removeChild(credits);
                 	rootSprite.removeChild(play);
                 	rootSprite.addChild(back);
@@ -96,6 +107,7 @@ class Menu extends Sprite{
 		credits.addEventListener(TouchEvent.TOUCH, function(e:TouchEvent){
             var touch = e.getTouch(credits, TouchPhase.BEGAN);
                 if (touch != null){
+                	rootSprite.removeChild(mode);
                 	rootSprite.removeChild(instructions);
                 	rootSprite.removeChild(play);
                 	rootSprite.addChild(back);
@@ -128,6 +140,23 @@ class Menu extends Sprite{
    				}
    		}); 
 
+   		mode = new TextField(300, 100, "Difficulty", "font", 50);
+		mode.color = 0xFFFFFF;
+		mode.x = 300;
+		mode.y = 395;
+		rootSprite.addChild(mode);
+
+   		mode.addEventListener(TouchEvent.TOUCH, function(e:TouchEvent){
+            var touch = e.getTouch(mode, TouchPhase.BEGAN);
+                if (touch != null){
+                   	rootSprite.removeChild(credits);
+                	rootSprite.removeChild(instructions);
+                	rootSprite.removeChild(play);
+                	rootSprite.addChild(back);
+                	mode.y = 150;
+   				}
+   		}); 
+
    		back.addEventListener(TouchEvent.TOUCH, function(e:TouchEvent){
             var touch = e.getTouch(back, TouchPhase.BEGAN);
                 if (touch != null){
@@ -144,6 +173,8 @@ class Menu extends Sprite{
 					instructions.y = 265;
 					credits.x = 350;
 					credits.y = 330;
+					mode.x = 300;
+					mode.y = 395;
                 	rootSprite.addChild(play);
                 	rootSprite.addChild(instructions);
                 	rootSprite.addChild(credits);
