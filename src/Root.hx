@@ -28,6 +28,11 @@ class Root extends Sprite {
 		assets.enqueue("assets/font.png");
 		assets.enqueue("assets/font.fnt");
         assets.enqueue("assets/menu.png");
+        assets.enqueue("assets/9v31.png");
+        assets.enqueue("assets/9v32.png");
+        assets.enqueue("assets/9v33.png");
+        assets.enqueue("assets/9v34.png");
+        assets.enqueue("assets/9v35.png");
 		
         assets.loadQueue(function onProgress(ratio:Float) {
             haxe.Log.clear();
