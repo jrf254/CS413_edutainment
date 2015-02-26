@@ -88,7 +88,7 @@ class Prompt extends TextField{
 	}
 	
 	public function isOffScreen():Bool{
-		if (this.x + 200 < 0){
+		if (this.x + 500 < 0){
 			return true;
 		}
 		return false;
