@@ -26,7 +26,6 @@ class Root extends Sprite {
         assets.enqueue("assets/spritesheet.xml");
 		assets.enqueue("assets/font.fnt");
 		assets.enqueue("assets/bgsong.mp3");
-        assets.enqueue("assets/eraser.png");
 		
         assets.loadQueue(function onProgress(ratio:Float) {
             haxe.Log.clear();
