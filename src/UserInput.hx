@@ -1,6 +1,7 @@
 //package starling.text;
 import starling.events.KeyboardEvent;
 import starling.text.TextField;
+import starling.events.EnterFrameEvent;
 
 class UserInput extends TextField{
 	private var answerText:String;
@@ -10,6 +11,14 @@ class UserInput extends TextField{
 		this.color = 0xFFFFFF;
 		this.y = 75;
 		this.addEventListener(KeyboardEvent.KEY_DOWN, keyDown);
+		this.addEventListener(EnterFrameEvent.ENTER_FRAME, enterFrame);
+	}
+	
+	public function enterFrame(event:EnterFrameEvent){
+		trace(this.parent.x);
+		if ((this.parent.x + 400) < 0){
+			this.text = "";
+		}
 	}
 	
 	public function keyDown(event:KeyboardEvent){
