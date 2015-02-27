@@ -26,6 +26,8 @@ class Game extends Sprite {
 	public var menu:Menu;
 	public var winText:TextField;
 	public var correctness:Bool;
+	public var erase:Image = new Image(Root.assets.getTexture("eraser"));
+	private var canJump = true;
 
 	public function new(rootSprite:Sprite) {
 		this.rootSprite = rootSprite;
@@ -50,6 +52,10 @@ class Game extends Sprite {
 
 		seven = new Seven();
 		rootSprite.addChild(seven);
+		
+		erase.x = text.x + 360;
+		erase.y = 430;
+		rootSprite.addChild(erase);
 	}
 	
 	public function enterFrame(event:EnterFrameEvent) {
@@ -57,6 +63,8 @@ class Game extends Sprite {
 		rotate(bottomsArray);
 		checkCorrect();
 		updateScore();
+		moveEraser();
+		noJump();
 	}
 	
 	//populates the board with multiple tiles
@@ -159,7 +167,13 @@ class Game extends Sprite {
 		bottomArray.push(bottom8);
 		return bottomArray;
 	}
-
+	
+	public function moveEraser(){
+		erase.x = erase.x - 2;
+		if (erase.x < 0){
+			erase.x = text.x + 360;
+		}
+	}
 
 	public function rotate(board:Array<Image>){
 		for (i in board){
@@ -192,12 +206,21 @@ class Game extends Sprite {
 	}
 
 	public function checkCorrect(){
-		if(nine.jump == false){
+		if(nine.jump == false && dist(nine.x, erase.x) == 50){
 		 	correctness = text.correct;
 		 	text.correct = false;  
 			nine.jump = correctness;
 		}
 	}
+	public function dist(p1:Float, p2:Float){
+		return (p2 - p1);
+	}
 
+	public function noJump(){
+		if (canJump == false){
+			nine.x = nine.x - 50;
+			canJump = true;
+		}
+	}
 }
 

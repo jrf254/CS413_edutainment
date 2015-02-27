@@ -18,7 +18,7 @@ class Prompt extends TextField{
 	private var correctCountHelper:Int = 0;
 	private var scoreCounter:TextField;
 	private var myInput:UserInput;
-	public var erase:Image = new Image(Root.assets.getTexture("eraser"));
+	
 
 	public function new(xCoord:Float, yCoord:Float, type:Int = 1){
 		super(500, 200, "","",48);
@@ -34,11 +34,6 @@ class Prompt extends TextField{
 		this.text = generateQuestion(type, diff);
 		this.addEventListener(EnterFrameEvent.ENTER_FRAME, enterFrame);
 		myInput = new UserInput();
-		this.addChild(myInput);
-
-		erase.x = this.x - 160;
-		erase.y = 380;
-		this.addChild(erase);
 		this.addChild(myInput);
 	}
 	
@@ -115,8 +110,10 @@ class Prompt extends TextField{
 			correct = true;
 			correctCount += 1;
 			correctCountHelper += 1;
-			this.x = xCoord;
-			this.text = generateQuestion(type,diff);
+			this.text = "Correct";
+			//this.x = xCoord;
+			//this.text = generateQuestion(type,diff);
+			answerString = "potato";
 		}
 		update();
 	}
