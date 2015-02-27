@@ -18,6 +18,7 @@ class Game extends Sprite {
 	public var boardsArray:Array<Image>;
 	public var bottomsArray:Array<Image>;	
 	public var nine:Niner;
+	public var seven:Seven;
 	public var type:Int;
 	private var scoreCounter:TextField;
 	private var correctCount:Int = 10;
@@ -42,6 +43,9 @@ class Game extends Sprite {
 
 		nine = new Niner();
 		rootSprite.addChild(nine);
+
+		seven = new Seven();
+		rootSprite.addChild(seven);
 	}
 	
 	public function enterFrame(event:EnterFrameEvent) {
