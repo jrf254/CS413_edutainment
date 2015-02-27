@@ -63,7 +63,7 @@ class Prompt extends TextField{
 			this.answer = 0;
 			for (i in 0...difficulty){
 				var num = numArray.pop();
-				answer = answer - num;
+				answer = -answer - num;
 				returnString = returnString + num;
 				if (i < difficulty - 1){
 					returnString = returnString + " - ";
