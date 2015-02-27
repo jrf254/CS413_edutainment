@@ -22,27 +22,9 @@ class Root extends Sprite {
 
         assets = new AssetManager();
 		
-		assets.enqueue("assets/chalkboard.png");
-		assets.enqueue("assets/chalkboard2.png");
-        assets.enqueue("assets/win.png");
-        assets.enqueue("assets/bottom.png");
-		assets.enqueue("assets/font.png");
+		assets.enqueue("assets/spritesheet.png");
+        assets.enqueue("assets/spritesheet.xml");
 		assets.enqueue("assets/font.fnt");
-        assets.enqueue("assets/menu.png");
-        assets.enqueue("assets/9v31.png");
-        assets.enqueue("assets/9v32.png");
-        assets.enqueue("assets/9v33.png");
-        assets.enqueue("assets/9v34.png");
-        assets.enqueue("assets/9v35.png");
-        assets.enqueue("assets/7v11.png");
-        assets.enqueue("assets/7v12.png");
-        assets.enqueue("assets/7v13.png");
-        assets.enqueue("assets/7v14.png");
-        assets.enqueue("assets/7v15.png");
-        assets.enqueue("assets/9jump1.png");
-        assets.enqueue("assets/9jump2.png");
-        assets.enqueue("assets/9jump3.png");
-        assets.enqueue("assets/9jump4.png");
 		assets.enqueue("assets/bgsong.mp3");
 		
         assets.loadQueue(function onProgress(ratio:Float) {

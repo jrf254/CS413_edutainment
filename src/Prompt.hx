@@ -34,6 +34,7 @@ class Prompt extends TextField{
 	}
 	
 	public function generateQuestion(type:Int, difficulty:Int = 2):String{
+		correct = false;
 		var returnString:String = "";
 		var numArray:Array<Float> = new Array();
 		answerString = "";
@@ -94,6 +95,7 @@ class Prompt extends TextField{
 			this.x = xCoord;
 			this.text = generateQuestion(type,diff);
 		}
+		trace(correct);
 		if (correctCountHelper == 10){
 			correctCountHelper = 0;
 			diff = diff + 1;

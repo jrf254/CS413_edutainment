@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:3698b76ae48db3fb8e493aafb7160ce1:0cb2af2027934afb2cdda0d63a6d256c:ef7663426bf705b25566a93aef3a1571$ -->
+<TextureAtlas imagePath="spritesheet.png">
+    <SubTexture name="7v11" x="1666" y="304" width="100" height="135" frameX="-18" frameY="-8" frameWidth="150" frameHeight="150"/>
+    <SubTexture name="7v12" x="1832" y="2" width="105" height="135" frameX="-18" frameY="-8" frameWidth="150" frameHeight="150"/>
+    <SubTexture name="7v13" x="1768" y="304" width="80" height="134" frameX="-18" frameY="-8" frameWidth="150" frameHeight="150"/>
+    <SubTexture name="7v14" x="1832" y="139" width="105" height="135" frameX="-18" frameY="-8" frameWidth="150" frameHeight="150"/>
+    <SubTexture name="7v15" x="1562" y="152" width="104" height="135" frameX="-19" frameY="-8" frameWidth="150" frameHeight="150"/>
+    <SubTexture name="9jump1" x="1756" y="441" width="89" height="145" frameX="-12" frameY="-2" frameWidth="150" frameHeight="150"/>
+    <SubTexture name="9jump2" x="1562" y="441" width="95" height="145" frameX="-6" frameY="-2" frameWidth="150" frameHeight="150"/>
+    <SubTexture name="9jump3" x="1659" y="441" width="95" height="145" frameX="-6" frameY="-2" frameWidth="150" frameHeight="150"/>
+    <SubTexture name="9jump4" x="1850" y="276" width="89" height="144" frameX="-12" frameY="-2" frameWidth="150" frameHeight="150"/>
+    <SubTexture name="9v31" x="1668" y="153" width="103" height="149" frameX="-13" frameY="0" frameWidth="150" frameHeight="150"/>
+    <SubTexture name="9v32" x="1562" y="289" width="102" height="150" frameX="-14" frameY="0" frameWidth="150" frameHeight="150"/>
+    <SubTexture name="9v33" x="1847" y="440" width="95" height="144" frameX="-6" frameY="0" frameWidth="150" frameHeight="150"/>
+    <SubTexture name="9v34" x="1700" y="2" width="130" height="149" frameX="-12" frameY="0" frameWidth="150" frameHeight="150"/>
+    <SubTexture name="9v35" x="1562" y="2" width="136" height="148" frameX="-12" frameY="0" frameWidth="150" frameHeight="150"/>
+    <SubTexture name="bottom" x="306" y="556" width="150" height="30"/>
+    <SubTexture name="chalkboard" x="2" y="2" width="150" height="600"/>
+    <SubTexture name="chalkboard2" x="154" y="2" width="150" height="600"/>
+    <SubTexture name="eraser" x="306" y="512" width="140" height="42" frameX="-4" frameY="-98" frameWidth="150" frameHeight="150"/>
+    <SubTexture name="font" x="306" y="2" width="350" height="508" frameX="-1" frameY="-2" frameWidth="353" frameHeight="512"/>
+    <SubTexture name="loading" x="658" y="2" width="450" height="300"/>
+    <SubTexture name="lose" x="658" y="304" width="450" height="300"/>
+    <SubTexture name="menu" x="1110" y="2" width="450" height="300"/>
+    <SubTexture name="win" x="1110" y="304" width="450" height="300"/>
+</TextureAtlas>
