@@ -83,10 +83,10 @@ class Menu extends Sprite{
                 	rootSprite.removeChild(play);
                 	rootSprite.addChild(back);
                 	instructions.y = 150;
-                	how = new TextField(700, 600, "Help 9 escape from 7 by correctly answering 30 questions. 7 is angry and will run through obstacles. Type your answer and press enter in order to jump. Pressing space returns you to the main menu.", "font", 40);
+                	how = new TextField(900, 300, "Help 9 escape from 7 by correctly answering 30 questions. 7 is angry and will run through obstacles. Type your answer and press enter in order to jump. Pressing space returns you to the main menu.", "font", 40);
 					how.color = 0xFFFFFF;
-					how.x = 100;
-					how.y = 50;
+					how.x = 0;
+					how.y = 200;
 					rootSprite.addChild(how);  
    				}
    		}); 
