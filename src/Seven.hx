@@ -33,7 +33,7 @@ class Seven extends Image{
 		pivotY = this.texture.height / 2;
 
 		x = 80;
-		y = 450;
+		y = 502;
 
 		start();
 	}
