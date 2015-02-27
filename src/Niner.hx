@@ -12,28 +12,54 @@ import starling.display.Sprite;
 import starling.animation.Juggler;
 import starling.display.Quad;
 
-class Niner extends Sprite{
+class Niner extends Image{
 
-	private var runAnimation:MovieClip;
-	private var jumpAnimation:MovieClip;
 	// private var movieVector:Vector.<MovieClip>;
 	private var jump:Bool;
 
-	public function Niner() {
+	var niner1:Texture = Root.assets.getTexture("9v31");
+	var niner2:Texture = Root.assets.getTexture("9v32");
+	var niner3:Texture = Root.assets.getTexture("9v33");
+	var niner4:Texture = Root.assets.getTexture("9v34");
+	var niner5:Texture = Root.assets.getTexture("9v35");
 
-		var atlas:TextureAtlas = Assets.getTextureAtlas();
- 
-        // var runFrames:Vector.<Texture> = atlas.getTextures("9v3");
+	var time:Int = 0;
 
-        runAnimation = new MovieClip(atlas.getTextures("9v3"), 12 );
+	public function new() {
+
+		super(niner1);
 
 		pivotX = this.texture.width / 2;
 		pivotY = this.texture.height / 2;
 
-		this.x = 200;
-		this.y = 450;
+		x = 200;
+		y = 450;
 
-		addChild(runAnimation);
-		Starling.juggler.add(runAnimation);
+		start();
+	}
+
+	public function start() {
+		this.addEventListener(EnterFrameEvent.ENTER_FRAME, enterFrame);
+	}
+
+	public function enterFrame() {
+		time = time + 1;
+
+		if(time == 3){
+		    texture =  niner2; 
+		}
+		else if(time == 6){
+			texture =  niner3; 
+		}
+		else if(time == 9){
+			texture =  niner4;
+		}
+		else if(time == 12){
+			texture =  niner5;
+		}
+		else if(time == 15){
+			texture =  niner1;
+			time = 0;
+		}
 	}
 }
