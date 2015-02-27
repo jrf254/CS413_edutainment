@@ -65,6 +65,7 @@ class Game extends Sprite {
 		updateScore();
 		moveEraser();
 		noJump();
+		loseCond();
 	}
 	
 	//populates the board with multiple tiles
@@ -206,10 +207,12 @@ class Game extends Sprite {
 	}
 
 	public function checkCorrect(){
-		if(nine.jump == false && dist(nine.x, erase.x) == 50){
+		if(nine.jump == false && dist(nine.x, erase.x) == 60){
 		 	correctness = text.correct;
 		 	text.correct = false;  
 			nine.jump = correctness;
+		}else if(text.correct == false && dist(nine.x, erase.x) < 50){
+			nine.x -= 2;
 		}
 	}
 	public function dist(p1:Float, p2:Float){
@@ -220,6 +223,19 @@ class Game extends Sprite {
 		if (canJump == false){
 			nine.x = nine.x - 50;
 			canJump = true;
+		}
+	}
+	
+	public function loseCond(){
+		if (seven.x >= nine.x){
+			var win:Image = new Image(Root.assets.getTexture("lose"));
+			win.width = flash.Lib.current.stage.stageWidth;
+			win.height = flash.Lib.current.stage.stageHeight;
+			rootSprite.addChild(win);
+			winText = new TextField(350, 150, "You Lose", "font", 100, 0xFFFFFF);
+			winText.x = 50;
+			winText.y = 0;
+			rootSprite.addChild(winText);
 		}
 	}
 }

@@ -36,7 +36,7 @@ class Niner extends Image{
 		pivotX = this.texture.width / 2;
 		pivotY = this.texture.height / 2;
 
-		x = 300;
+		x = 600;
 		y = 502;
 
 		start();
