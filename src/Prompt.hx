@@ -2,6 +2,9 @@ import starling.text.TextField;
 import starling.text.BitmapFont;
 import starling.events.EnterFrameEvent;
 import starling.text.TextField;
+import starling.display.Image;
+import starling.textures.Texture;
+import starling.textures.TextureAtlas;
 
 class Prompt extends TextField{
 	public var correct:Bool = false;
@@ -15,6 +18,7 @@ class Prompt extends TextField{
 	private var correctCountHelper:Int = 0;
 	private var scoreCounter:TextField;
 	private var myInput:UserInput;
+	public var erase:Image = new Image(Root.assets.getTexture("eraser"));
 
 	public function new(xCoord:Float, yCoord:Float, type:Int = 1){
 		super(500, 200, "","",48);
@@ -31,6 +35,10 @@ class Prompt extends TextField{
 		this.addEventListener(EnterFrameEvent.ENTER_FRAME, enterFrame);
 		myInput = new UserInput();
 		this.addChild(myInput);
+
+		erase.x = this.x - 160;
+		erase.y = 380;
+		this.addChild(erase);
 	}
 	
 	public function generateQuestion(type:Int, difficulty:Int = 2):String{
