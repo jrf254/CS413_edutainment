@@ -9,10 +9,12 @@ class Prompt extends TextField{
 	private var yCoord:Float;
 	private var type:Int;
 	private var answer:Float;
+	private var answerString:String = "";
 	private var diff:Int;
 	private var correctCount:Int = 0;
 	private var correctCountHelper:Int = 0;
 	private var scoreCounter:TextField;
+	private var myInput:UserInput;
 
 	public function new(xCoord:Float, yCoord:Float, type:Int = 1){
 		super(500, 200, "","",48);
@@ -27,11 +29,14 @@ class Prompt extends TextField{
 		diff = 2;
 		this.text = generateQuestion(type, diff);
 		this.addEventListener(EnterFrameEvent.ENTER_FRAME, enterFrame);
+		myInput = new UserInput();
+		this.addChild(myInput);
 	}
 	
 	public function generateQuestion(type:Int, difficulty:Int = 2):String{
 		var returnString:String = "";
 		var numArray:Array<Float> = new Array();
+		answerString = "";
 		for (i in 0...difficulty){
 			numArray.push(Math.ffloor(Math.random()*100));
 		}
@@ -47,19 +52,22 @@ class Prompt extends TextField{
 				}
 			}
 			trace(answer);
+			answerString = answerString + answer;
 		}
 		//subtraction branch
 		else if(type == 1){
 			this.answer = 0;
 			for (i in 0...difficulty){
 				var num = numArray.pop();
-				answer = answer - num;
 				returnString = returnString + num;
+				answerString = answerString + answer;
 				if (i < difficulty - 1){
 					returnString = returnString + " - ";
 				}
 			}
 			trace(answer);
+			answerString = answerString + answer;
+			
 		}
 		//multiplication branch
 		else if(type == 2){
@@ -67,12 +75,14 @@ class Prompt extends TextField{
 			for (i in 0...difficulty){
 				var num = numArray.pop();
 				answer = answer * num;
+
 				returnString = returnString + num;
 				if (i < difficulty - 1){
 					returnString = returnString + " x ";
 				}
 			}
 			trace(answer);
+			answerString = answerString + answer;
 		}else{
 			return "ERROR";
 		}
@@ -93,6 +103,11 @@ class Prompt extends TextField{
 		
 	public function enterFrame(event:EnterFrameEvent){
 		update();
+		if(myInput.getAnswer() == answerString){
+			correct = true;
+			this.x = xCoord;
+			this.text = generateQuestion(type,diff);
+		}
 	}
 	
 	public function isCorrect():Bool{
