@@ -44,6 +44,7 @@ class Root extends Sprite {
         assets.enqueue("assets/9jump3.png");
         assets.enqueue("assets/9jump4.png");
 		assets.enqueue("assets/bgsong.mp3");
+        assets.enqueue("assets/eraser.png");
 		
         assets.loadQueue(function onProgress(ratio:Float) {
             haxe.Log.clear();
