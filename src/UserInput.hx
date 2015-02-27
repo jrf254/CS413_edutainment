@@ -15,7 +15,6 @@ class UserInput extends TextField{
 	}
 	
 	public function enterFrame(event:EnterFrameEvent){
-		trace(this.parent.x);
 		if ((this.parent.x + 400) < 0){
 			this.text = "";
 		}
