@@ -194,8 +194,8 @@ class Game extends Sprite {
 	public function checkCorrect(){
 		if(nine.jump == false){
 		 	correctness = text.correct;
-			nine.jump = correctness;  
-			text.correct = false;   
+		 	text.correct = false;  
+			nine.jump = correctness;
 		}
 	}
 
