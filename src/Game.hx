@@ -25,6 +25,7 @@ class Game extends Sprite {
 	private var text:Prompt;
 	public var menu:Menu;
 	public var winText:TextField;
+	public var correctness:Bool;
 
 	public function new(rootSprite:Sprite) {
 		this.rootSprite = rootSprite;
@@ -54,6 +55,7 @@ class Game extends Sprite {
 	public function enterFrame(event:EnterFrameEvent) {
 		rotate(boardsArray);
 		rotate(bottomsArray);
+		checkCorrect();
 		updateScore();
 	}
 	
@@ -186,6 +188,14 @@ class Game extends Sprite {
 			winText.x = 50;
 			winText.y = 0;
 			rootSprite.addChild(winText);
+		}
+	}
+
+	public function checkCorrect(){
+		if(nine.jump == false){
+		 	correctness = text.correct;
+			nine.jump = correctness;  
+			text.correct = false;   
 		}
 	}
 

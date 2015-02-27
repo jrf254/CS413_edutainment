@@ -13,7 +13,7 @@ import starling.animation.Juggler;
 import starling.display.Quad;
 
 class Niner extends Image{
-	
+
 	public var jump:Bool;
 	private var timeJump:Bool = true;
 
@@ -35,8 +35,6 @@ class Niner extends Image{
 
 		pivotX = this.texture.width / 2;
 		pivotY = this.texture.height / 2;
-
-		jump = true;
 
 		x = 300;
 		y = 495;
