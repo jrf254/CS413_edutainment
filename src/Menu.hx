@@ -41,6 +41,8 @@ class Menu extends Sprite{
 	}
 
 	public function mainMenu(){
+
+		Starling.current.stage.addEventListener(KeyboardEvent.KEY_UP, keyUp);
 		menu = new Image(Root.assets.getTexture("menu"));	
 		menu.width = flash.Lib.current.stage.stageWidth;
         menu.height = flash.Lib.current.stage.stageHeight;
@@ -264,7 +266,12 @@ class Menu extends Sprite{
    		}); 
 	}
 
-
+	public function keyUp(event:KeyboardEvent){
+		if (event.keyCode == Keyboard.SPACE) {
+				rootSprite.removeChildren();
+				mainMenu();
+			}
+    }
 
 
 

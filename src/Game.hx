@@ -23,6 +23,7 @@ class Game extends Sprite {
 	private var scoreCounter:TextField;
 	private var correctCount:Int = 10;
 	private var text:Prompt;
+	public var menu:Menu;
 
 	public function new(rootSprite:Sprite) {
 		this.rootSprite = rootSprite;
@@ -171,6 +172,17 @@ class Game extends Sprite {
 	
 	public function updateScore(){
 		scoreCounter.text = "Score: " + text.getScore();
+		winCond();
 	}
+
+	public function winCond(){
+		if (text.getScore() == 30){
+			var win:Image = new Image(Root.assets.getTexture("win"));
+			win.width = flash.Lib.current.stage.stageWidth;
+			win.height = flash.Lib.current.stage.stageHeight;
+			rootSprite.addChild(win);
+		}
+	}
+
 }
 
