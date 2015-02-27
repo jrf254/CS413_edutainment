@@ -4,7 +4,7 @@ import starling.events.EnterFrameEvent;
 import starling.text.TextField;
 
 class Prompt extends TextField{
-	private var correct:Bool = true;
+	private var correct:Bool = false;
 	private var xCoord:Float;
 	private var yCoord:Float;
 	private var type:Int;
