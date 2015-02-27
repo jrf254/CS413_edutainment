@@ -202,7 +202,8 @@ class Game extends Sprite {
 	}
 
 	public function winCond(){
-		if (text.getScore() == 10){
+		if (text.getScore() == 2){
+			rootSprite.removeChild(nine);
 			var win:Image = new Image(Root.assets.getTexture("win"));
 			win.width = flash.Lib.current.stage.stageWidth;
 			win.height = flash.Lib.current.stage.stageHeight;
@@ -238,14 +239,15 @@ class Game extends Sprite {
 	
 	public function loseCond(){
 		if (seven.x + 50 >= nine.x){
+			rootSprite.removeChild(nine);
 			var win:Image = new Image(Root.assets.getTexture("lose"));
 			win.width = flash.Lib.current.stage.stageWidth;
 			win.height = flash.Lib.current.stage.stageHeight;
 			rootSprite.addChild(win);
-			/*winText = new TextField(350, 350, "You Lose", "font", 100, 0xFFFFFF);
+			winText = new TextField(350, 350, "You Lose", "font", 100, 0xFFFFFF);
 			winText.x = 50;
 			winText.y = 0;
-			rootSprite.addChild(winText);*/
+			rootSprite.addChild(winText);
 		}
 	}
 	public function jumperCounter(){
