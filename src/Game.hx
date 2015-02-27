@@ -28,6 +28,9 @@ class Game extends Sprite {
 	public var correctness:Bool;
 	public var erase:Image = new Image(Root.assets.getTexture("eraser"));
 	private var canJump = true;
+	private var jumping:Bool;
+	private var counter:Int = 0;
+	private var passed:Bool = false;
 
 	public function new(rootSprite:Sprite) {
 		this.rootSprite = rootSprite;
@@ -66,6 +69,7 @@ class Game extends Sprite {
 		moveEraser();
 		noJump();
 		loseCond();
+		jumperCounter();
 	}
 	
 	//populates the board with multiple tiles
@@ -173,6 +177,7 @@ class Game extends Sprite {
 		erase.x = erase.x - 2;
 		if (erase.x < 0){
 			erase.x = text.x + 360;
+			passed = false;
 		}
 	}
 
@@ -207,13 +212,17 @@ class Game extends Sprite {
 	}
 
 	public function checkCorrect(){
+		trace(jumping);
 		if(nine.jump == false && dist(nine.x, erase.x) == 60){
+			jumping = true;
 		 	correctness = text.correct;
 		 	text.correct = false;  
 			nine.jump = correctness;
-		}else if(text.correct == false && dist(nine.x, erase.x) < 50){
+		}else if(text.correct == false && dist(nine.x, erase.x) < 80 && jumping == false){
 			nine.x -= 2;
+			passed = true;
 		}
+		//jumping = false;
 	}
 	public function dist(p1:Float, p2:Float){
 		return (p2 - p1);
@@ -236,6 +245,12 @@ class Game extends Sprite {
 			winText.x = 50;
 			winText.y = 0;
 			rootSprite.addChild(winText);
+		}
+	}
+	public function jumperCounter(){
+		if(erase.x > 900){
+			trace("poop");
+			jumping = false;
 		}
 	}
 }
