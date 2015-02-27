@@ -30,6 +30,7 @@ class Game extends Sprite {
 	}
 	
 	public function start(){
+		Root.assets.playSound("bgsong", 0, 1000);
 		rootSprite.addEventListener(EnterFrameEvent.ENTER_FRAME, enterFrame);
 		boardsArray = populate();
 		bottomsArray = populate1();
