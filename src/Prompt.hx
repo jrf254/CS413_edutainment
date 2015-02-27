@@ -94,19 +94,22 @@ class Prompt extends TextField{
 			this.x = xCoord;
 			this.text = generateQuestion(type,diff);
 		}
-		if (correctCountHelper >= 10){
+		if (correctCountHelper == 10){
 			correctCountHelper = 0;
 			diff = diff + 1;
 		}
 	}
 		
 	public function enterFrame(event:EnterFrameEvent){
-		update();
+
 		if(myInput.getAnswer() == answerString){
 			correct = true;
+			correctCount += 1;
+			correctCountHelper += 1;
 			this.x = xCoord;
 			this.text = generateQuestion(type,diff);
 		}
+		update();
 	}
 	
 	public function isCorrect():Bool{
