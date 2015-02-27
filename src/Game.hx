@@ -212,7 +212,6 @@ class Game extends Sprite {
 	}
 
 	public function checkCorrect(){
-		trace(jumping);
 		if(nine.jump == false && dist(nine.x, erase.x) == 60){
 			jumping = true;
 		 	correctness = text.correct;
@@ -222,7 +221,6 @@ class Game extends Sprite {
 			nine.x -= 2;
 			passed = true;
 		}
-		//jumping = false;
 	}
 	public function dist(p1:Float, p2:Float){
 		return (p2 - p1);
@@ -249,7 +247,6 @@ class Game extends Sprite {
 	}
 	public function jumperCounter(){
 		if(erase.x > 900){
-			trace("poop");
 			jumping = false;
 		}
 	}
