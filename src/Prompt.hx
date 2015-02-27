@@ -38,7 +38,7 @@ class Prompt extends TextField{
 		var numArray:Array<Float> = new Array();
 		answerString = "";
 		for (i in 0...difficulty){
-			numArray.push(Math.ffloor(Math.random()*100));
+			numArray.push(Math.ffloor(Math.random()*20));
 		}
 		//addition branch
 		if (type == 0){
