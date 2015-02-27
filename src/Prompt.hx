@@ -55,7 +55,6 @@ class Prompt extends TextField{
 					returnString = returnString + " + ";
 				}
 			}
-			trace(answer);
 			answerString = answerString + answer;
 		}
 		//subtraction branch
@@ -69,7 +68,6 @@ class Prompt extends TextField{
 					returnString = returnString + " - ";
 				}
 			}
-			trace(answer);
 			answerString = answerString + answer;
 			
 		}
@@ -84,7 +82,6 @@ class Prompt extends TextField{
 					returnString = returnString + " x ";
 				}
 			}
-			trace(answer);
 			answerString = answerString + answer;
 		}else{
 			return "ERROR";
@@ -114,6 +111,7 @@ class Prompt extends TextField{
 			//this.x = xCoord;
 			//this.text = generateQuestion(type,diff);
 			answerString = "potato";
+			myInput.setAnswer("");
 		}
 		update();
 	}

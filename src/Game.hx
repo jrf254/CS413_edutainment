@@ -199,7 +199,7 @@ class Game extends Sprite {
 	}
 
 	public function winCond(){
-		if (text.getScore() == 30){
+		if (text.getScore() == 10){
 			var win:Image = new Image(Root.assets.getTexture("win"));
 			win.width = flash.Lib.current.stage.stageWidth;
 			win.height = flash.Lib.current.stage.stageHeight;

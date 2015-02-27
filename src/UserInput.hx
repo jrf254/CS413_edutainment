@@ -38,4 +38,7 @@ class UserInput extends TextField{
 	public function getAnswer(){
 		return answerText;
 	}
+	public function setAnswer(input:String){
+		answerText = input;
+	}
 }
