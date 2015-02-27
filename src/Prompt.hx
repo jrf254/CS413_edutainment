@@ -95,7 +95,7 @@ class Prompt extends TextField{
 			this.x = xCoord;
 			this.text = generateQuestion(type,diff);
 		}
-		if (correctCountHelper == 10){
+		if (correctCountHelper == 6){
 			correctCountHelper = 0;
 			diff = diff + 1;
 		}

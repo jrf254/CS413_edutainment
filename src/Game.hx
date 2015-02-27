@@ -202,7 +202,7 @@ class Game extends Sprite {
 	}
 
 	public function winCond(){
-		if (text.getScore() == 2){
+		if (text.getScore() == 10){
 			rootSprite.removeChild(nine);
 			var win:Image = new Image(Root.assets.getTexture("win"));
 			win.width = flash.Lib.current.stage.stageWidth;

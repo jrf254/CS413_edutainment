@@ -36,9 +36,6 @@ class Root extends Sprite {
             if (ratio == 1) {
                 haxe.Log.clear();
 				startup.removeChild(startup.loadingBitmap);
- 
-				//var game = new Game(rootSprite);
-				//game.start();
                 menu = new Menu(rootSprite);
                 menu.mainMenu();                
 			}
@@ -47,10 +44,8 @@ class Root extends Sprite {
     }
 	public function keyUp(event:KeyboardEvent){
 		if (event.keyCode == Keyboard.SPACE) {
-				trace(rootSprite.numChildren);
 				rootSprite.removeChildren(0,-1, true);
 				rootSprite.removeEventListeners();
-				trace(rootSprite.numChildren);
 				menu.mainMenu();
 		}
     }
