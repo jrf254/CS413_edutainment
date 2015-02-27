@@ -24,6 +24,7 @@ class Game extends Sprite {
 	private var correctCount:Int = 10;
 	private var text:Prompt;
 	public var menu:Menu;
+	public var winText:TextField;
 
 	public function new(rootSprite:Sprite) {
 		this.rootSprite = rootSprite;
@@ -181,6 +182,10 @@ class Game extends Sprite {
 			win.width = flash.Lib.current.stage.stageWidth;
 			win.height = flash.Lib.current.stage.stageHeight;
 			rootSprite.addChild(win);
+			winText = new TextField(350, 150, "You Win", "font", 100, 0xFFFFFF);
+			winText.x = 50;
+			winText.y = 0;
+			rootSprite.addChild(winText);
 		}
 	}
 
