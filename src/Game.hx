@@ -12,6 +12,7 @@ import starling.events.Event;
 import starling.text.TextField;
 import starling.text.BitmapFont;
 import starling.textures.Texture;
+import flash.media.SoundChannel;
 
 class Game extends Sprite {
 	public var rootSprite:Sprite;
@@ -31,6 +32,7 @@ class Game extends Sprite {
 	private var jumping:Bool;
 	private var counter:Int = 0;
 	private var passed:Bool = false;
+	private var player:SoundChannel;
 
 	public function new(rootSprite:Sprite) {
 		this.rootSprite = rootSprite;
@@ -38,8 +40,9 @@ class Game extends Sprite {
 	}
 	
 	public function start(){
-		Root.assets.playSound("bgsong", 0, 1000);
+		player = Root.assets.playSound("bgsong", 0, 1000);
 		rootSprite.addEventListener(EnterFrameEvent.ENTER_FRAME, enterFrame);
+		rootSprite.addEventListener(KeyboardEvent.KEY_DOWN, keyDown);
 		boardsArray = populate();
 		bottomsArray = populate1();
 		text = new Prompt(900, 50, type);
@@ -234,15 +237,15 @@ class Game extends Sprite {
 	}
 	
 	public function loseCond(){
-		if (seven.x >= nine.x){
+		if (seven.x + 50 >= nine.x){
 			var win:Image = new Image(Root.assets.getTexture("lose"));
 			win.width = flash.Lib.current.stage.stageWidth;
 			win.height = flash.Lib.current.stage.stageHeight;
 			rootSprite.addChild(win);
-			winText = new TextField(350, 150, "You Lose", "font", 100, 0xFFFFFF);
+			/*winText = new TextField(350, 350, "You Lose", "font", 100, 0xFFFFFF);
 			winText.x = 50;
 			winText.y = 0;
-			rootSprite.addChild(winText);
+			rootSprite.addChild(winText);*/
 		}
 	}
 	public function jumperCounter(){
@@ -250,5 +253,11 @@ class Game extends Sprite {
 			jumping = false;
 		}
 	}
+	
+	public function keyDown(event:KeyboardEvent){
+		if (event.keyCode == Keyboard.SPACE) {
+			player.stop();
+		}
+    }
 }
 

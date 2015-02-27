@@ -5,6 +5,9 @@ import starling.core.Starling;
 import starling.animation.Transitions;
 import starling.display.Stage;
 import starling.events.EnterFrameEvent;
+import starling.events.KeyboardEvent;
+import starling.events.Event;
+import flash.ui.Keyboard;
 
 
 class Root extends Sprite {
@@ -26,7 +29,7 @@ class Root extends Sprite {
         assets.enqueue("assets/spritesheet.xml");
 		assets.enqueue("assets/font.fnt");
 		assets.enqueue("assets/bgsong.mp3");
-		
+		rootSprite.addEventListener(KeyboardEvent.KEY_UP, keyUp);
         assets.loadQueue(function onProgress(ratio:Float) {
             haxe.Log.clear();
             trace(ratio);
@@ -41,5 +44,14 @@ class Root extends Sprite {
 			}
         });
 		
+    }
+	public function keyUp(event:KeyboardEvent){
+		if (event.keyCode == Keyboard.SPACE) {
+				trace(rootSprite.numChildren);
+				rootSprite.removeChildren(0,-1, true);
+				rootSprite.removeEventListeners();
+				trace(rootSprite.numChildren);
+				menu.mainMenu();
+		}
     }
 }
