@@ -13,8 +13,7 @@ import starling.animation.Juggler;
 import starling.display.Quad;
 
 class Niner extends Image{
-
-	// private var movieVector:Vector.<MovieClip>;
+	
 	public var jump:Bool;
 	private var timeJump:Bool = true;
 
