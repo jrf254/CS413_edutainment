@@ -244,9 +244,9 @@ class Game extends Sprite {
 			win.width = flash.Lib.current.stage.stageWidth;
 			win.height = flash.Lib.current.stage.stageHeight;
 			rootSprite.addChild(win);
-			winText = new TextField(350, 350, "You Lose", "font", 100, 0xFFFFFF);
-			winText.x = 50;
-			winText.y = 0;
+			winText = new TextField(400, 150, "You Lose", "font", 100, 0xFFFFFF);
+			winText.x = 20;
+			winText.y = 475;
 			rootSprite.addChild(winText);
 		}
 	}
